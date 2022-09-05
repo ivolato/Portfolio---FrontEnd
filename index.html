@@ -1,2 +1,107 @@
-<h1> Mi Portfolio</h1>
-<p> Modificaciones en el repositorio remoto</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portafolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Roughly 155 characters" />
+    <!-- Bootstrap CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap icons -->
+    <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="card mat-card" id="primera-division">
+        <div id="banner"> <img src="feeling sport shablon.png" alt=""> </div>
+        <div id="info" style="padding: 16px;">
+            <div id="info-foto">
+                 <img class="profile-image" src="img-perfil-ivan.jpg">
+                 <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pen"></i></a></div>
+            </div>
+            <div id="info-data">
+                <div>
+                <h1>Apellido y Nombre</h1>
+                    <div id="info-trabajo">Donde trabajas actualmente?</div>
+                    <div id="info-contacto">
+                      <span>Lugar de residencia?</span> <span><a href="#">Informacion de contacto. </a></span>
+                   </div>
+                </div>
+                <ul id="info-detalle">
+                    <li><a href="#">
+                        <img src="logo-empresa">
+                      <h2>Nombre.</h2>
+                    </li></a>
+                    <li><a href="#">
+                         <img src="logo-estudio">
+                        <h2>Estudio</h2>
+                    </a></li>
+                    </ul>
+            </div>
+            <div id="info-acciones">
+                <button type="button" class="btn btn-primary btn-lg">Mis Intereses</button>
+                <button type="button" class="btn btn-secondary btn-lg">Añadir Seccion</button>
+                <button type="button" class="btn btn-secondary btn-lg">Mas</button>
+            </div>
+        </div> 
+      </div>
+    <div class="card mat-card">
+      <div class="card-titles">
+        <h1>Acerca de...</h1>
+        <div class="btn-edit" onclick="cambiar_parrafo()">
+          <a href="#" class="btn-right">
+            <i class="bi bi-pen"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <p id="text-acercade"> Estudiante de Ingenieria Industrial.</p>
+      </div>
+      <div>
+        <input id="edit-acercade" type="text" oninput="mostrar_valor(this.value)" style="display:none;">
+      </div>
+    </div>
+    
+    <div class="card mat-card" id="tercera-division">
+       <h1>Estudios</h1>
+       <h1>Experiencia</h1>
+    </div>
+        
+    <div class="card mat-card" id="cuarta-division">
+        <h1>Hard Skills & Soft Skills</h1>
+    </div>
+        
+    <div class="card mat-card" id="quinta-division">
+        <h1>Proyectos</h1>
+    </div>
+    <script>
+      //esta funcion:
+      //cambia el estilo del imput a visible
+      //toma el valor de texto del parrafo id="text-acercade"
+      //lo muestra por consola
+      function cambiar_parrafo(){
+        document.getElementById("edit-acercade").style.display="block";
+        let texto = document.getElementById("text-acercade").innerText;
+        console.log(texto);
+      };
+      function mostrar_valor(valor){
+        document.getElementById("text-acercade").innerText=valor;
+      };
+      function logMessage(message){
+        console.log(message + "<br>");
+      }
+
+      // cotrola si se preciona enter
+      let textarea=document.getElementById("edit-acercade")
+      textarea.addEventListener('keyup', (e) => 
+      {logMessage(`key "${e.key}" released [event: keyup]`);
+        if(e.key=="Enter")
+          {document.getElementById("edit-acercade").style.display="none"}
+      });
+    </script>
+     
+     <!-- Bootstrap JS -->
+   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
